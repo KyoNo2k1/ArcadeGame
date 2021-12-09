@@ -1,0 +1,76 @@
+.game-info{
+    border: 4px solid #ff99cc;
+    margin:10px auto 0;
+    background: rgb(199, 228, 255);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  .game-info h1,h4{
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+    
+  .like,.unlike{
+    font-size: 1rem;
+    margin: 10px 0 5px 10px;   
+    border: 1px solid #999;
+    border-radius: 10px;
+    float: right;
+    background-color: #fff;
+  }
+  .like:hover,.unlike:hover, .game-info__report:hover{
+    opacity: 0.7;
+  }
+  .game__star--gold{
+    color: rgb(50, 115, 255);
+    
+  }
+
+  .game-info__report{
+    display: flex;
+    margin: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #999;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .game-info__report h4{
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+  }
+  .report-flag{
+    padding: 8px 5px 0 5px;
+    margin-bottom: 10px;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  span{
+    font-size: 1.8rem;
+    background-color:red;
+    position: relative;
+  }
+  span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    margin: auto;
+    border-width: 0 12px 5px;
+    border-style: solid;
+    bottom: -5px;
+    color: red;
+    border-color: transparent currentColor transparent currentColor;
+}
+  .on {
+    color: hsl(59, 100%, 60%);
+  }
+  .off {
+    color: #ccc;
+  }

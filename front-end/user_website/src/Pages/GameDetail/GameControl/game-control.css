@@ -1,0 +1,39 @@
+.game-control{
+    background: rgb(199, 228, 255);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 10px;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+  
+  .game-control__zoom,
+  .game-control__btn{
+    display: block;
+  }
+  .game-control__btn h3{
+    font-size: 1.4rem;
+  }
+
+  .game-control h3{
+    font-size:1.4rem;
+    font-weight:bold;
+  }
+  .game-control__btn--css{
+    display:flex; 
+    justify-content: center; 
+    cursor: pointer;
+  }
+  
+  .btn__control{
+    width:30px;
+    margin: 0 10px;
+  }
+  
+  .btn__zoom{
+    font-size: 1.8rem;
+    margin: 10px 0 5px 10px;
+    float: right;
+  }
+  

@@ -1,0 +1,49 @@
+.game-same {
+  height: 542px;
+  background-color: rgb(199, 228, 255);
+  margin: 10px 0 0 630px;
+  border-radius: 10px;
+  width: 37.6%;
+}
+.game-same--css {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px, 0;
+  padding: 0 10px;
+}
+.game-same-link {
+  height: 210px;
+  width: 40%;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 5px 0;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  top: 0;
+  transition: top linear 0.2s;
+}
+.game-same-link:hover {
+  top: -5px;
+  opacity: 0.8;
+}
+
+.game-same__img {
+  height: 70%;
+  width: 100%;
+}
+
+.game-same__name {
+  font-size: 1rem;
+  font-weight: 700;
+  height: 15%;
+  padding: 5px 0 0 5px;
+}
+
+.game-same__dev {
+  font-size: 0.9rem;
+  font-weight: 400;
+  height: 15%;
+  padding: 5px 0 0 5px;
+  height: 13%;
+}

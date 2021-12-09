@@ -1,0 +1,38 @@
+.grid {
+  width: 100%;
+  display: block;
+  padding: 0;
+}
+
+.grid.wide {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.col {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.home-page--css {
+  width: 100%;
+}
+
+.SectionTitle {
+  font-size: 2rem;
+  margin: 20px 0 20px 5%;
+}

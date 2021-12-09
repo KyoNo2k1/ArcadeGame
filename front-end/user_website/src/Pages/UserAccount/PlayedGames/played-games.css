@@ -1,0 +1,47 @@
+.show-game{
+  display: inline-block;
+}
+
+.game-list--css {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px, 0;
+  position:absolute;
+}
+.game-list-link {
+  height: 250px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 3px 0;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  top: 0;
+  transition: top linear 0.2s;
+  padding: 2px;
+}
+
+.game-list-img {
+  padding:10% 0 0 5% ;
+  height:200px;
+  width: 180px;
+}
+
+.game-list-name {
+  font-size: 1.45rem;
+  font-weight: 700;
+  padding: 5px 0 0 15px;
+  width: 120%;
+}
+
+.game-list-rate {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 0 0 5px;
+}
+.game-list-played {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0 0 0 5px;
+}

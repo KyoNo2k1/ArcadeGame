@@ -1,0 +1,13 @@
+.game-demo{
+    height: 250px;
+    background-color: rgb(199, 228, 255);
+    margin: 10px 0 0 46px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .game-demo__link{
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+  }

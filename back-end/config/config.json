@@ -1,0 +1,25 @@
+{
+  "development": {
+    "host": "37.59.55.185",
+    "username": "lOAjt2SHrp",
+    "password": "e3YawP06vq",
+    "port": 3306,
+    "database": "lOAjt2SHrp",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "arcade_game_website",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "host": "37.59.55.185",
+    "username": "lOAjt2SHrp",
+    "password": "e3YawP06vq",
+    "port": 3306,
+    "database": "lOAjt2SHrp",
+    "dialect": "mysql"
+  }
+}

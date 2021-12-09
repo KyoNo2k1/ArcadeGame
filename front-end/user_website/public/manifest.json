@@ -1,0 +1,11 @@
+{
+  "short_name": "Arcade Game",
+  "name": "Arcade Game Website - created by GoNin team",
+  "icons": [
+    
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

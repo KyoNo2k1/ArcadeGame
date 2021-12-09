@@ -1,0 +1,47 @@
+.iconfont0{
+    color: #00c70a;
+    margin-right: 20px;
+}
+.iconfont{
+    color: #ff3344;
+    margin-right: 20px;
+}
+.iconfont1{
+    color: #005ac0;
+    margin-right: 20px;
+}
+.iconfont2{
+    color: #fc51d1;
+    margin-right: 20px;
+}
+.ava{
+    color: rgb(61, 61, 61);
+    margin-right: 25px;
+}
+
+.iconfont1,
+.iconfont,
+.iconfont0,
+.iconfont2:hover{
+    cursor: pointer;
+}
+.imagee{
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.imagee:hover {
+    transform: scale(2.6); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+.avaa{
+    margin-right: 10px;
+    margin-top: 20px;
+}
+img {
+    object-fit: cover; 
+    object-position: center;
+    border-radius: 50%;
+  }
+.inputE{
+    padding: 5px;
+}

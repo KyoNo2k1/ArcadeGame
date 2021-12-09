@@ -1,0 +1,28 @@
+:root {
+  --gameScreen-height: 600px;
+}
+.App-header {
+  position: fixed;
+  width: 100%;
+  height: 66px;
+  color: white;
+  z-index: 10;
+}
+
+.App-main {
+  margin-top: 66px;
+  min-height: 1500px;
+  z-index: -2;
+}
+
+.App-left-sidebar {
+  width: 15%;
+}
+
+.App-footer {
+  border-top: 3px solid #000000;
+  font-size: 62.5%;
+  line-height: 1.6em;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+}

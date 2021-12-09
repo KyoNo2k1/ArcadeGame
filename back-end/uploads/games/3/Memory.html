@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 100vh;
+        background: #1abc9c;
+        background-image: linear-gradient(to top left, #9b59b6, #1abc9c);
+        font-family: arial;
+        position: relative;
+        text-align: center;
+      }
+
+      /* HEADER */
+      header {
+        color: white;
+        letter-spacing: 10px;
+        font-size: 22px;
+        padding: 10px 5px;
+      }
+
+      @media only screen and (min-width: 768px) {
+        header {
+          font-size: 28px;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        header {
+          font-size: 32px;
+          padding: 10px;
+        }
+
+        header h1 {
+          font-weight: 400;
+        }
+      }
+
+      /* main SECTION */
+      .main {
+        background: white;
+        width: 250px;
+        height: 345px;
+        /*   box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.4); */
+        margin: auto;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .main {
+          width: 310px;
+          height: 285px;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .main {
+          width: 410px;
+          height: 375px;
+        }
+      }
+
+      .box {
+        background: #6186aa;
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin: 10px 0 0 10px;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .box {
+          width: 70px;
+          height: 70px;
+        }
+      }
+
+      .box.play:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
+      .box img {
+        width: 100%;
+        display: block;
+        border: solid 1px transparent;
+      }
+
+      .box .outlined {
+        border: solid 1px #34495e;
+        background: #1abc9c;
+        opacity: 0.7;
+      }
+
+      /* STATUS bar */
+      #state {
+        background: #6186aa;
+        /*   background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
+        background-size: 250%;
+        width: 230px;
+        line-height: 25px;
+        float: left;
+        margin: 10px 0 0 10px;
+        padding: 0 10px;
+        color: white;
+        font-size: 16px;
+      }
+
+      @media only screen and (min-width: 768px) {
+        #state {
+          width: 290px;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        #state {
+          width: 390px;
+          line-height: 35px;
+        }
+      }
+
+      #time {
+        float: left;
+      }
+
+      #time::after {
+        content: " sec";
+      }
+
+      #score {
+        float: right;
+      }
+
+      #score::after {
+        content: " points";
+      }
+
+      /* FOOTER */
+      footer p {
+        color: white;
+        padding: 5px;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+
+      footer p a {
+        color: #ddd;
+        text-decoration: none;
+      }
+
+      footer p a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      .show {
+        display: block;
+      }
+
+      /* PRE modal window */
+      #pre {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      #themes {
+        margin: auto;
+        padding: 20px;
+        width: 300px;
+        background: white;
+        color: #6186aa;
+      }
+
+      #themes p {
+        margin-top: 10px;
+        padding: 10px 20px;
+        border: solid 1px;
+        background: white;
+        color: #6186aa;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      #themes p:hover {
+        background: #6186aa;
+        background-size: 250%;
+        color: white;
+      }
+
+      #pre h2,
+      #post h2 {
+        font-size: 24px;
+        font-weight: normal;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+      }
+
+      /* POST modal window */
+      #post {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+      }
+
+      #post > div {
+        width: 300px;
+        padding: 20px 0 40px;
+        background: white;
+        color: #6186aa;
+      }
+
+      #post p:first-child,
+      #post #final {
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin: auto;
+        padding: 10px 20px;
+      }
+
+      #post #again {
+        color: #6186aa;
+        text-decoration: none;
+        margin: auto;
+        padding: 10px 20px;
+        width: 160px;
+        border: solid 1px;
+      }
+
+      #post #again:hover {
+        background: #6186aa;
+        /*   background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
+        background-size: 250%;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body id="clickStopScroll">
+    <header>
+      <h1>MEMORY</h1>
+    </header>
+
+    <section class="main">
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+      <div class="box play"></div>
+
+      <div id="state">
+        <span id="time">0</span>
+        <span id="score">0</span>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Created by
+        <a href="https://remybeumier.be" target="_blank">Rémy Beumier</a>
+      </p>
+    </footer>
+
+    <section id="pre" class="">
+      <div id="themes">
+        <h2>Choose your theme !</h2>
+        <p id="pokemon" class="themes" title="Pokemon">Pokemon</p>
+        <p id="starwars" class="themes" title="Star Wars">Star Wars</p>
+        <p id="lotr" class="themes" title="Lord of the Ring">
+          Lord of the Ring
+        </p>
+        <p id="disney" class="themes" title="Disney">Disney</p>
+        <p id="pixar" class="themes" title="Pixar">Pixar</p>
+        <p id="harrypotter" class="themes" title="Harry Potter">Harry Potter</p>
+      </div>
+    </section>
+
+    <section id="post" class="hidden">
+      <div>
+        <h2>BRAVO !</h2>
+        <p id="final"></p>
+        <br />
+        <p>
+          <a id="again">Play Again !</a>
+        </p>
+      </div>
+    </section>
+
+    <script>
+      // other themes to add ?
+      // bigger memory?
+
+      var library = {
+        pokemon: [
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980025/memory/Pokemon/Bulbasaur.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980083/memory/Pokemon/Charmander.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980101/memory/Pokemon/Squirtle.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980116/memory/Pokemon/Pikachu.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980129/memory/Pokemon/Mewtwo.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980142/memory/Pokemon/Mew.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980154/memory/Pokemon/Articuno.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980164/memory/Pokemon/Zapdos.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980175/memory/Pokemon/Moltres.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980186/memory/Pokemon/Eevee.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980025/memory/Pokemon/Bulbasaur.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980083/memory/Pokemon/Charmander.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980101/memory/Pokemon/Squirtle.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980116/memory/Pokemon/Pikachu.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980129/memory/Pokemon/Mewtwo.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980142/memory/Pokemon/Mew.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980154/memory/Pokemon/Articuno.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980164/memory/Pokemon/Zapdos.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980175/memory/Pokemon/Moltres.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980186/memory/Pokemon/Eevee.png",
+        ],
+        starwars: [
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980981/memory/starwars/anakin%20skywalker.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981009/memory/starwars/luke%20skywalker.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981022/memory/starwars/Obi%20wann.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981054/memory/starwars/Han%20solo.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981074/memory/starwars/chewbacca.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981095/memory/starwars/yoda.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981117/memory/starwars/dark%20sidious.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981141/memory/starwars/dark%20vador.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981165/memory/starwars/padme.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981190/memory/starwars/leia.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547980981/memory/starwars/anakin%20skywalker.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981009/memory/starwars/luke%20skywalker.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981022/memory/starwars/Obi%20wann.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981054/memory/starwars/Han%20solo.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981074/memory/starwars/chewbacca.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981095/memory/starwars/yoda.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981117/memory/starwars/dark%20sidious.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981141/memory/starwars/dark%20vador.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981165/memory/starwars/padme.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981190/memory/starwars/leia.jpg",
+        ],
+        lotr: [
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981408/memory/lotr/gandalf.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981438/memory/lotr/sauron.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981469/memory/lotr/Aragorn.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981501/memory/lotr/legolas.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981535/memory/lotr/Gimli.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981603/memory/lotr/golum.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981645/memory/lotr/sam.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981686/memory/lotr/saroumane.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981738/memory/lotr/bilbo.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981802/memory/lotr/frodo.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981408/memory/lotr/gandalf.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981438/memory/lotr/sauron.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981469/memory/lotr/Aragorn.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981501/memory/lotr/legolas.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981535/memory/lotr/Gimli.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981603/memory/lotr/golum.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981645/memory/lotr/sam.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981686/memory/lotr/saroumane.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981738/memory/lotr/bilbo.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547981802/memory/lotr/frodo.jpg",
+        ],
+        disney: [
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982044/memory/disney/mickey.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982088/memory/disney/mowgli.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982610/memory/disney/tarzan.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982620/memory/disney/simba.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982628/memory/disney/aladin.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982636/memory/disney/blanche%20neige.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982644/memory/disney/alice.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982653/memory/disney/peter%20pan.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982663/memory/disney/pinocchio.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982738/memory/disney/raiponce.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982044/memory/disney/mickey.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982088/memory/disney/mowgli.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982610/memory/disney/tarzan.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982620/memory/disney/simba.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982628/memory/disney/aladin.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982636/memory/disney/blanche%20neige.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982644/memory/disney/alice.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982653/memory/disney/peter%20pan.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982663/memory/disney/pinocchio.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982738/memory/disney/raiponce.jpg",
+        ],
+        pixar: [
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982971/memory/pixar/up.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982987/memory/pixar/buzz.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983000/memory/pixar/woody.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983016/memory/pixar/Remy.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983032/memory/pixar/Mike.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983077/memory/pixar/Nemo.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983114/memory/pixar/wall-e.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983169/memory/pixar/Mr-Incredible.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983381/memory/pixar/sully.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983403/memory/pixar/flash%20mcqueen.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982971/memory/pixar/up.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547982987/memory/pixar/buzz.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983000/memory/pixar/woody.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983016/memory/pixar/Remy.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983032/memory/pixar/Mike.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983077/memory/pixar/Nemo.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983114/memory/pixar/wall-e.png",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983169/memory/pixar/Mr-Incredible.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983381/memory/pixar/sully.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547983403/memory/pixar/flash%20mcqueen.jpg",
+        ],
+        harrypotter: [
+          "https://res.cloudinary.com/beumsk/image/upload/v1547998926/memory/harrypotter/harry.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547998958/memory/harrypotter/ron.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547998992/memory/harrypotter/hermione.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999106/memory/harrypotter/dumbledore.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999032/memory/harrypotter/malfoy.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999143/memory/harrypotter/voldemort.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999401/memory/harrypotter/rogue.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999196/memory/harrypotter/hagrid.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999271/memory/harrypotter/sirius.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999577/memory/harrypotter/neville.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547998926/memory/harrypotter/harry.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547998958/memory/harrypotter/ron.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547998992/memory/harrypotter/hermione.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999106/memory/harrypotter/dumbledore.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999032/memory/harrypotter/malfoy.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999143/memory/harrypotter/voldemort.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999401/memory/harrypotter/rogue.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999196/memory/harrypotter/hagrid.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999271/memory/harrypotter/sirius.jpg",
+          "https://res.cloudinary.com/beumsk/image/upload/v1547999577/memory/harrypotter/neville.jpg",
+        ],
+      };
+
+      var images = [];
+      var tempElt1 = "";
+      var tempElt2 = "";
+      var click = -1;
+      var win = 0;
+      var score = 0;
+      var time = 0;
+
+      var preElt = document.querySelector("#pre");
+      var themesElt = document.querySelector("#themes");
+      var boxElts = document.getElementsByClassName("box");
+      var mainElt = document.querySelector(".main");
+      var timeElt = document.querySelector("#time");
+      var scoreElt = document.querySelector("#score");
+      var postElt = document.querySelector("#post");
+      var finalElt = document.querySelector("#final");
+      var againElt = document.querySelector("#again");
+
+      // initiate the game with chosen theme
+      themesElt.addEventListener("click", function (e) {
+        if (e.target.classList.contains("themes")) {
+          activateTheme(e.target.id);
+          preElt.classList.add("hidden");
+        }
+      });
+
+      function activateTheme(theme) {
+        // insert theme in images array
+        for (let i = 0; i < 20; i++) {
+          images.push(library[theme][i]);
+        }
+        // insert images in memory game
+        for (let i = 0; i < 20; i++) {
+          var rand = Math.floor(Math.random() * (images.length - 1));
+          boxElts[i].innerHTML =
+            "<img src='" + images[rand] + "' alt='image' class='hidden'>";
+          images.splice(rand, 1);
+        }
+      }
+
+      // Handle the play
+      mainElt.addEventListener("click", gameLogic);
+
+      function gameLogic(e) {
+        // make sure the box is playable
+        if (e.target.classList.contains("play")) {
+          e.target.firstChild.classList.remove("hidden");
+          // first of two click
+          if (click < 1) {
+            tempElt1 = e.target;
+            // timer
+            if (click === -1) {
+              timer = setInterval(function () {
+                time++;
+                timeElt.innerHTML = time;
+              }, 1000);
+            }
+            click = 1;
+          }
+
+          // second click
+          else if (e.target !== tempElt1) {
+            tempElt2 = e.target;
+
+            // different images
+            if (tempElt1.firstChild.src !== tempElt2.firstChild.src) {
+              mainElt.removeEventListener("click", gameLogic);
+              setTimeout(function () {
+                tempElt1.firstChild.classList.add("hidden");
+                tempElt2.firstChild.classList.add("hidden");
+                mainElt.addEventListener("click", gameLogic);
+              }, 400);
+              if (score > 0) {
+                score -= 2;
+              }
+              scoreElt.innerHTML = score;
+            }
+
+            // same images
+            else {
+              score += 10;
+              win += 2;
+              tempElt1.firstChild.classList.add("outlined");
+              tempElt2.firstChild.classList.add("outlined");
+              tempElt1.classList.remove("play");
+              tempElt2.classList.remove("play");
+              scoreElt.innerHTML = score;
+
+              // game won
+              if (win === 20) {
+                clearInterval(timer);
+                finalElt.innerHTML =
+                  "You won " + score + " points <br> in " + time + " seconds";
+                postElt.classList.remove("hidden");
+              }
+            }
+            click = 0;
+          }
+        }
+      }
+
+      againElt.addEventListener("click", resetGame);
+
+      function resetGame() {
+        // reset game
+        tempElt1 = "";
+        tempElt2 = "";
+        click = -1;
+        win = 0;
+        score = 0;
+        time = 0;
+        postElt.classList.add("hidden");
+        preElt.classList.remove("hidden");
+        for (let i = 0; i < 20; i++) {
+          boxElts[i].classList.add("play");
+          boxElts[i].firstChild.classList.add("hidden");
+        }
+        timeElt.textContent = time;
+        scoreElt.textContent = score;
+      }
+
+      // handle focus of the page
+      // function checkPageFocus() {
+      //   if (document.hasFocus()) {
+      //     preElt.classList.remove("hidden");
+      //   }
+      //   else {
+      //     preElt.classList.add("hidden");
+      //   }
+      // }
+      // var checkPageInterval = setInterval(checkPageFocus, 300);
+      var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+      function preventDefault(e) {
+        e.preventDefault();
+      }
+      function preventDefaultForScrollKeys(e) {
+        if (keys[e.keyCode]) {
+          preventDefault(e);
+          return false;
+        }
+      }
+      function stopScroll(e) {
+        // alert('stop')
+        window.addEventListener("keydown", preventDefaultForScrollKeys, false);
+        e.stopPropagation();
+      }
+      document
+        .getElementById("clickStopScroll")
+        .addEventListener("click", stopScroll);
+    </script>
+  </body>
+</html>

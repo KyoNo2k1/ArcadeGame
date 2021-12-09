@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="clickStopScroll">
+    <div class="container">
+      <div class="game-wrap">
+        <canvas width="960px" height="540" id="game"></canvas>
+        <article class="content"></article>
+      </div>
+    </div>
+
+    <script src="ColorBlast.js"></script>
+
+    <script>
+      var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+      function preventDefault(e) {
+        e.preventDefault();
+      }
+      function preventDefaultForScrollKeys(e) {
+        if (keys[e.keyCode]) {
+          preventDefault(e);
+          return false;
+        }
+      }
+      function stopScroll(e) {
+        // alert('stop')
+        window.addEventListener("keydown", preventDefaultForScrollKeys, false);
+        e.stopPropagation();
+      }
+      document
+        .getElementById("clickStopScroll")
+        .addEventListener("click", stopScroll);
+    </script>
+  </body>
+</html>

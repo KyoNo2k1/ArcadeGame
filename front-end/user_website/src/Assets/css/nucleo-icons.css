@@ -1,0 +1,56 @@
+
+@font-face {
+  font-family: 'Nucleo';
+  src: url('../Font/nucleo.eot');
+  src: url('../Font/nucleo.eot') format('embedded-opentype'), url('../Font/nucleo.woff2') format('woff2'), url('../Font/nucleo.woff') format('woff'), url('../Font/nucleo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.tim-icons {
+  display: inline-block;
+  font: normal normal normal 1em/1 'Nucleo';
+  vertical-align: middle;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-align-center::before {
+  content: "\ea03";
+}
+.fa{
+  display: inline-block;
+  font: normal normal normal 1em/1 'Nucleo';
+  vertical-align: middle;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-gamepad{
+  content: "\ea06";
+}
+.icon-atom::before {
+  content: "\ea06";
+}
+
+.icon-pin::before {
+  content: "\ea3e";
+}
+
+.icon-puzzle-10::before {
+  content: "\ea40";
+}
+
+.icon-single-02::before {
+  content: "\ea49";
+}
+
+.icon-sound-wave::before {
+  content: "\ea4b";
+}
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+
+.game-screen {
+  height: 100%;
+  background: linear-gradient(0, rgb(93, 255, 128), rgb(51, 163, 255));
+  border: 1px solid #999;
+  border-radius: 5px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
+
+}
+.game-screen-outside{
+  width: 100%;
+  height: 800px;
+  margin-top: 45px;
+}
+.game-screen__img {
+  display: flex;
+  margin: 30px 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.game-screen__img--css {
+  width: 25%;
+  height: 150px;
+  padding: 0 10px;
+}
+
+.game-screen__btn {
+  display: block;
+}
+
+.game-screen__btn li {
+  list-style: none;
+  margin: 40px 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.game-screen__btn li a {
+  display: block;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+.game-screen__btn a:hover {
+  color: rgb(162, 210, 255);
+}
+.game-screen__btn .btn__play {
+  padding: 0;
+  cursor: pointer;
+}
+
+.playGame{
+  width:1000px;
+  height:800px;
+  border:1px solid black;
+  display: none;
+}
+.playGame__screen{
+  width:100%;
+  height:100%;
+}
+

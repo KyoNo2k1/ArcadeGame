@@ -1,0 +1,88 @@
+.footer-icon {
+  display: block;
+  position: relative;
+}
+
+.footer-icon__css {
+  width: 50%;
+  margin-top: 20px;
+  margin-left: 4px;
+}
+
+.footer-from {
+  position: absolute;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.about {
+  margin: 20px 0;
+  list-style: none;
+}
+
+.about-header {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.about-info {
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.about-info a {
+  text-decoration: none;
+  color: #666;
+}
+
+.about-info a:hover {
+  color: var(--primary-color);
+}
+
+.follow-icon {
+  margin-right: 10px;
+  color: #666;
+  display: inline-block;
+}
+
+.follow-icon:hover {
+  opacity: 0.5;
+}
+
+.footer-img {
+  height: 200px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.grid {
+  width: 100%;
+  display: block;
+  padding: 0;
+}
+
+.grid .wide-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row-footer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -4px;
+  margin-right: -4px;
+  padding: 0 80px;
+}
+
+.col {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.wide .l-2 {
+  display: block;
+  flex: 0 0 16.66667%;
+  max-width: 16.66667%;
+}

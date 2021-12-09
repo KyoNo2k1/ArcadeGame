@@ -1,0 +1,148 @@
+.navbar-light {
+  background: -webkit-linear-gradient(left, #33ccff 0%, #ff99cc 100%);
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2, green, blue, alpha);
+  height: 50px;
+  font-size: 0.9rem;
+  z-index: 1028 !important;
+}
+
+.navbar-logo {
+  position: relative;
+  margin-right: 5vw;
+  text-decoration: none;
+  color: transparent;
+  display: flex;
+  line-height: 0;
+  height: 50px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.navbar .nav-left-side {
+  flex: 40%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.navbar-search {
+  max-width: 600px;
+  background-color: white;
+  height: 36px;
+  flex: 1;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.navbar-search-input {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  border: none;
+  margin-left: 20px;
+  outline: none;
+}
+
+.navbar-search-btn {
+  outline: none !important;
+  position: relative;
+  background-color: rgb(73, 174, 255);
+  border: none;
+  height: 28px;
+  width: 40px;
+  border-radius: 15px;
+  margin-right: 4px;
+}
+
+.navbar-search-btn:hover {
+  background-color: rgb(34, 143, 233);
+  cursor: pointer;
+}
+
+.navbar-search-btn-icon {
+  color: white;
+}
+
+.navbar .nav-right-side {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 5%;
+}
+
+.navbar-btn {
+  outline: none !important;
+  position: relative;
+  background-color: rgb(15, 113, 194);
+  color: white;
+  height: 32px;
+  width: 63px;
+  margin: 0 0 0px 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  border: none;
+}
+
+.navbar-btn:hover {
+  background-color: rgb(9, 66, 112);
+  cursor: pointer;
+}
+
+.navbar-dropdown {
+  height: 36px;
+  width: 40px;
+  border-radius: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navbar-dropdown:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.navbar-dropdown-language {
+  height: 50%;
+  width: 60%;
+  margin-top: 10px;
+  margin-left: 8px;
+}
+
+.navbar-dropdown-mailbox {
+  height: 60%;
+  width: 60%;
+  margin-top: 8px;
+  margin-left: 9px;
+}
+
+.navbar-dropdown-avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-left: 2px;
+}
+
+.navbar a {
+  color: white;
+}
+
+.navbar a:hover {
+  color: white;
+}
+
+.navbar-expand .navbar-collapse {
+  width: fit-content;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.dropdown-toggle {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 20px;
+}

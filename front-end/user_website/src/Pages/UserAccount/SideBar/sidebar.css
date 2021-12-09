@@ -1,0 +1,104 @@
+.sidebar,
+.off-canvas-sidebar {
+  height: calc(100vh - 110px);
+  width: 230px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center center;
+  display: block;
+  margin-top: 80px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.sidebar .nav li > a,
+.off-canvas-sidebar {
+  margin: 10px 15px 0;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 10px 8px;
+  line-height: 1.625rem;
+}
+.sidebar .nav p,
+.off-canvas-sidebar .nav p {
+  margin: 0;
+  line-height: 30px;
+  position: relative;
+  display: block;
+  height: auto;
+  white-space: nowrap;
+}
+.sidebar .nav i,
+.off-canvas-sidebar {
+  font-size: 20px;
+  float: left;
+  margin-right: 20px;
+  line-height: 30px;
+  width: 34px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.sidebar .logo,
+.off-canvas-sidebar .logo {
+  position: relative;
+  padding: 0.5rem 0.7rem;
+  z-index: 4;
+}
+
+.avatar-img {
+  border-radius: 50%;
+}
+
+.inputImg {
+  width: 85px;
+  font-size: 17px;
+  margin-left: 60px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  position: absolute;
+  top: 150px;
+  right: 75px;
+}
+.logo:hover .inputImg {
+  opacity: 1;
+}
+.username {
+  font-size: "Poppins", sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 1.4em;
+  padding-top: 10px;
+}
+
+.sidebar,
+.off-canvas-sidebar {
+  background-color: #1d8cf8;
+}
+.main-panel {
+  position: relative;
+  float: right;
+  width: 100%;
+  min-height: 100vh;
+  border-top: 0.3px solid #e14eca;
+  background: white;
+}
+
+.main-panel > .content {
+  padding: 78px 20px 20px 300px;
+  min-height: calc(100vh - 150px);
+}
+.main-panel > .navbar {
+  margin-bottom: 0;
+}
+.main-panel .header {
+  margin-bottom: 50px;
+}

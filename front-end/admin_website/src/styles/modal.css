@@ -1,0 +1,143 @@
+
+.bg-modal{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	top: 0;
+	margin-top: 30px;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+.modal-content{
+	width: 500px;
+	height: 510px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-user{
+	width: 480px;
+	height: 450px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-edit{
+	width: 520px;
+	height: 650px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-addGame{
+	width: 530px;
+	height: 630px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-editUser{
+	width: 500px;
+	height: 520px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-editAdmin{
+	width: 480px;
+	height: 470px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-mess{
+	width: 510px;
+	height: 490px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-dev{
+	width: 500px;
+	height: 640px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-game{
+	width: 540px;
+	height: 640px;
+	background-color: rgb(255, 225, 252);
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+.modal-LB{
+	width: 500px;
+	height: 670px;
+	background-color: rgb(207, 244, 253);
+	border-radius: 10px;
+	text-align: center;
+	padding: 8px;
+	position: relative;
+}
+/* .info{
+	width: 15px;
+	display:contents;
+	float: middle;
+	padding: 3px 25px;
+	text-decoration: none;
+} */
+.editbtn{
+	width: 15px;
+	display: initial;
+	float: left;
+	padding: 3px 25px;
+}
+.close{
+	position: absolute;
+	top: 0;
+	right: 14px;
+	font-size: 30px;
+	transform: rotate(45deg);
+	Cursor: pointer;
+}
+.button1 {
+	background-color: rgb(123, 231, 243);
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 30px;
+	text-decoration: none;
+	padding: 10px 28px;
+	color: rgb(0, 0, 0);
+	display: inline-block;
+}
+.button1:hover {
+	cursor: pointer;
+		background-color: rgb(180, 245, 245);
+		color: #3ddef0;
+		border: 2px solid #3ddef0;
+		
+	}
+textarea{
+	resize: none;
+	padding: 5px;
+}

@@ -1,0 +1,245 @@
+.visibleHidden {
+  visibility: hidden;
+}
+
+.game-comment {
+  height: 300px;
+  background-color: rgb(199, 228, 255);
+  margin: 10px 0;
+  border-radius: 10px;
+  width: 60%;
+}
+.game-comment__account {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  padding: 2px;
+  border: 2px solid rgba(160, 160, 160, 0.5);
+}
+.game-comment__account-header {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+}
+
+.game-comment__account-send {
+  border-radius: 10px;
+  margin-right: 16px;
+  background-color: rgb(15, 113, 194);
+  color: #fff;
+  display: block;
+  font-weight: 500;
+}
+
+.game-comment__account-login {
+  margin: 5px 8px 10px 8px;
+  display: flex;
+  width: 100%;
+}
+
+.game-comment__account-btn {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+#test2 {
+  display: none;
+}
+.game-comment__input {
+  margin: 0 5px;
+  border-radius: 5px;
+  flex: 1;
+}
+.game-comment--css {
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-comment__content {
+  display: block;
+  font-size: 1.1rem;
+  margin: 5px;
+}
+
+.game-comment__content1 {
+  display: flex;
+  height: 54px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  margin: 2px;
+  align-items: center;
+}
+
+.comment__cmt {
+  font-size: 0.8rem;
+  max-width: 440px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+@keyframes commentCome {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.comment__input {
+  display: none;
+  width: 100%;
+  animation: comment ease-in 1s;
+}
+@keyframes comment {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.comment__input-box {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 5px;
+  padding: 2px 20px 2px 5px;
+}
+.comment__img {
+  display: block;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.game-comment__desc {
+  margin: 2px 0 2px 5px;
+  flex: 1;
+}
+.comment__bottom,
+.comment__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.comment__bottom {
+  margin-bottom: 3px;
+}
+.comment__top {
+  height: 100%;
+}
+.comment__bottom__right {
+  display: flex;
+  align-items: center;
+  animation: comment ease-in 1s;
+}
+.comment__bottom__right-hide {
+  display: none;
+  align-items: center;
+  animation: comment ease-in 1s;
+}
+.comment__user {
+  color: red;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-right: 20px;
+  padding-top: 1px;
+}
+.comment__time {
+  display: inline-flex;
+  font-size: 0.6rem;
+  margin-right: 5px;
+}
+.comment__update-hide,
+.comment__update {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.comment__delete-hide,
+.comment__delete {
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: red;
+  border-radius: 10px;
+}
+
+.comment__delete-hide:hover,
+.comment__update-hide:hover,
+.comment__update:hover,
+.comment__delete:hover {
+  background-color: #ccc;
+}
+.comment__delete-icon-hide,
+.comment__update-icon-hide,
+.comment__update-icon,
+.comment__delete-icon {
+  margin: 25% 25%;
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.comment__delete-icon-hide .comment__update-icon-hide {
+  margin: 25% 25%;
+  font-size: 0.8em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.login-out {
+  height: 35px;
+  width: 120px;
+  background: #fff;
+  margin: 0 0 0 16px;
+  border-radius: 15px;
+  display: flex;
+}
+.login-out a {
+  font-size: 1.2rem;
+}
+
+.login-out__btn {
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  color: rgb(49, 155, 255);
+  padding: 0 16px;
+  text-decoration: none;
+  font-weight: 700;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.login-out__btn--css {
+  background-color: red;
+  color: #fff;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  padding: 0 16px;
+  text-decoration: none;
+  font-weight: 700;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.login-out__btn:hover,
+.login-out__btn--css:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.login-out__btn:hover .navbar-btn:hover {
+  opacity: 1;
+}

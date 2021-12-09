@@ -1,0 +1,127 @@
+.friend-list {
+  position: fixed;
+  bottom: 0;
+  width: 16.66667%;
+  top: 55px;
+  left: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.friend-list__heading {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(0, rgb(93, 255, 128), rgb(51, 163, 255));
+}
+
+.friend-list__contact,
+.friend-list__friend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5px;
+}
+.friend-list__title {
+  height: 500px;
+}
+.friend-list__title-img,
+.friend-list__friend-img {
+  height: 35px;
+  width: 35px;
+  margin-right: 5px;
+  border-radius: 50%;
+  object-fit: cover; 
+  object-position: center;
+}
+
+.friend-list__title-name,
+.friend-list__friend-name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 8px 5px 8px 0;
+}
+.friend-list__title-name {
+  width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.friend-list__heading-2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9affa3;
+  border-bottom: 3px dashed #ffb23e;
+}
+
+.friend-list__add {
+  display: flex;
+  border-radius: 10px;
+  margin: 5px 10px;
+  background-color: rgb(140, 203, 255);
+}
+.friend-list__add:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.friend-list__add-icon {
+  margin: auto 10px;
+}
+
+.friend-list__title {
+  background-color: #9affa3;
+  width: 100%;
+  display: block;
+}
+
+.friend-info {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  padding: 0;
+  background: -webkit-linear-gradient(left, #ff99cc 30%, #33ccff 100%);
+}
+
+.friend-info__item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: 2px solid #ffb23e;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #ffb23e;
+}
+
+.friend-list__title-add {
+  border-radius: 10px;
+  background-color: rgb(255, 151, 215);
+  margin-right: 5px;
+}
+
+.friend-list__title-add:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.friend-list__footer {
+  display: flex;
+  background-color: #ff99cc;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.friend-list__footer-icon {
+  font-size: 1.8rem;
+  color: #000;
+}
+.friend-list__add-email {
+  display: none;
+  margin: 8px;
+}
